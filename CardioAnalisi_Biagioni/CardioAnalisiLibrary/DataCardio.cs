@@ -15,5 +15,26 @@ namespace CardioAnalisiLibrary
             double max = frequenzamax * 90 / 100;
             return max;
         }
+        static public string Condizioni(int battiti)
+        {
+            string msg = "";
+            if(battiti<=0)
+            {
+                msg = "Errore!!";
+            }
+            else if (battiti < 60)
+            {
+                msg = "Bradicardia";
+            }
+            else if (battiti > 60 && battiti < 100)
+            {
+                msg = "Normale";
+            }
+            else
+            {
+                msg = "Tachicardia";
+            }
+            return msg;
+        }
     }
 }
