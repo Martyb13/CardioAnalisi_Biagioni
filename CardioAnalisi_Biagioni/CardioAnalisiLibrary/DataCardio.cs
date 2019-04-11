@@ -8,11 +8,11 @@ namespace CardioAnalisiLibrary
 {
     public class DataCardio
     {
-        static public int Frequenza(int età, ref int min)
+        static public double Frequenza(double età, ref double min)
         {
-            int frequenzamax = 220 - età;
+            double frequenzamax = 220 - età;
             min = frequenzamax * 70 / 100;
-            int max = frequenzamax * 90 / 100;
+            double max = frequenzamax * 90 / 100;
             return max;
         }
     }
