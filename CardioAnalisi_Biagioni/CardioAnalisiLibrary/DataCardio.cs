@@ -26,7 +26,7 @@ namespace CardioAnalisiLibrary
             {
                 msg = "Bradicardia";
             }
-            else if (battiti > 60 && battiti < 100)
+            else if (battiti >= 60 && battiti <= 100)
             {
                 msg = "Normale";
             }

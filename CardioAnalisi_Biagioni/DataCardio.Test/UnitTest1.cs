@@ -7,7 +7,7 @@ namespace DataCardio.Test
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestFrequenza()
         {
             double età = 90;
             double min = 0;
@@ -18,7 +18,7 @@ namespace DataCardio.Test
             Assert.AreEqual(min, risultato_atteso2);
         }
         [TestMethod]
-        public void TestMethod2()
+        public void TestFrequenza2()
         {
             double età = 16;
             double min = 0;
@@ -29,7 +29,7 @@ namespace DataCardio.Test
             Assert.AreEqual(min, risultato_atteso2);
         }
         [TestMethod]
-        public void TestMethod3()
+        public void TestFrequenza3()
         {
             double età = 35;
             double min = 0;
@@ -38,6 +38,38 @@ namespace DataCardio.Test
             double risultato_ottenuto = CardioAnalisiLibrary.DataCardio.Frequenza(età, ref min);
             Assert.AreEqual(risultato_atteso, risultato_ottenuto);
             Assert.AreEqual(min, risultato_atteso2);
+        }
+        [TestMethod]
+        public void TestCondizioni()
+        {
+            int battiti = 60;
+            string risultato_atteso = "Normale";
+            string risultato_ottenuto = CardioAnalisiLibrary.DataCardio.Condizioni(battiti);
+            Assert.AreEqual(risultato_atteso, risultato_ottenuto);
+        }
+        [TestMethod]
+        public void TestCondizioni2()
+        {
+            int battiti = 49;
+            string risultato_atteso = "Bradicardia";
+            string risultato_ottenuto = CardioAnalisiLibrary.DataCardio.Condizioni(battiti);
+            Assert.AreEqual(risultato_atteso, risultato_ottenuto);
+        }
+        [TestMethod]
+        public void TestCondizioni3()
+        {
+            int battiti = 150;
+            string risultato_atteso = "Tachicardia";
+            string risultato_ottenuto = CardioAnalisiLibrary.DataCardio.Condizioni(battiti);
+            Assert.AreEqual(risultato_atteso, risultato_ottenuto);
+        }
+        [TestMethod]
+        public void TestCondizioni4()
+        {
+            int battiti = -5;
+            string risultato_atteso = "Errore!!";
+            string risultato_ottenuto = CardioAnalisiLibrary.DataCardio.Condizioni(battiti);
+            Assert.AreEqual(risultato_atteso, risultato_ottenuto);
         }
     }
 }
